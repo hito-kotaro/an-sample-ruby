@@ -1,7 +1,5 @@
 - hosts: server
-
   tasks:
-
     - name: updated yum
       yum:
         name: "*"
@@ -47,7 +45,7 @@
         src: ./001_rbenv.sh
         dest: ~/.bash.d/001_rbenv.sh
         mode: 0755
-        become_user: "{{ __working_user }}"
+      become_user: "{{ __working_user }}"
 
     - name: installed ruby-build
       git:
