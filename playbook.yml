@@ -1,11 +1,12 @@
 - hosts: server
-  become: true
+
   tasks:
 
     - name: updated yum
       yum:
         name: "*"
         state: latest
+        become: true
     
     - name: set LANG=ja_JP.UTF-8 in /etc/locale.conf
       lineinfile:
@@ -39,7 +40,7 @@
       git:
         repo: https://github.com/sstephenson/rbenv.git
         dest: ~/.rbenv
-        become_user: "{{ __working_user }}"
+        
 
     - name: registerd rbenv path
       template:
