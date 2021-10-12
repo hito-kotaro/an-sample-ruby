@@ -6,7 +6,7 @@
       yum:
         name: "*"
         state: latest
-        become: true
+        become: yes
     
     - name: set LANG=ja_JP.UTF-8 in /etc/locale.conf
       lineinfile:
